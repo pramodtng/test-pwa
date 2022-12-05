@@ -6,7 +6,7 @@ import Flagship from '../components/Flagship';
 import Latest from '../components/Latest';
 import { loadData } from './api/hello';
 
-export default function Home({ phones }) {
+export default function Home({ data }) {
   return (
     <div>
       <Head>
@@ -36,7 +36,7 @@ export default function Home({ phones }) {
           </ul>
           <div className="tab-content" id="tabs-tabContentFill">
             <div className="tab-pane fade show active mx-5" id="tabs-homeFill" role="tabpanel" aria-labelledby="tabs-home-tabFill">
-              <AllPhones phones={phones} />
+              <AllPhones data={data} />
             </div>
             <div className="tab-pane fade mx-5" id="tabs-profileFill" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
               <Latest />
