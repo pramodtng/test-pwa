@@ -4,6 +4,7 @@ import AllPhones from '../components/AllPhones';
 import Selling from '../components/Selling';
 import Flagship from '../components/Flagship';
 import Latest from '../components/Latest';
+import { loadData } from './api/hello';
 
 export default function Home({ phones }) {
   return (
@@ -53,11 +54,10 @@ export default function Home({ phones }) {
 }
 
 export async function getStaticProps() {
-  const allphones = await fetch('https://tashielectronicsbackend.tashicell.com/api/phones?populate=*')
-  const phones = await allphones.json()
+  const data = await loadData()
   return {
     props: {
-      phones
+      data
     }
   }
 }
